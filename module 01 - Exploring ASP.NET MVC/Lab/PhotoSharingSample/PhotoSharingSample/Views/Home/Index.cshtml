@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<p>Join, upload, share, and comment instantly. Bring your photographic vision to everyone.</p>
+
+<h2>Latest Photos:</h2>
+
+@Html.Action("_PhotoGallery", "Photo", new { number = 3 })
+

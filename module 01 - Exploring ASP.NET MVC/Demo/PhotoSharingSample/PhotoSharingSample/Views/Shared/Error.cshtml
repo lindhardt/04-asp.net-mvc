@@ -1,0 +1,15 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>Error</h2>
+
+<h2>
+    Sorry, an error occurred while processing your request.
+</h2>
+<p>Controller: @Model.ControllerName</p>
+<p>Action: @Model.ActionName</p>
+<p>Message: @Model.Exception.Message</p>
+@Html.ActionLink("Return to Home Page", "Index", "Home")

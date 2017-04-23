@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link type="text/css" rel="stylesheet" href="~/Content/PhotoSharingStyles.css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <h1 class="site-page-title">Photos Unlimited</h1>
+    <div class="login-controls">
+        @if (Request.IsAuthenticated) {
+            <div>
+                Hello, @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(User.Identity.Name).
+                @Html.ActionLink("Log Off", "LogOff", "Account")
+                @Html.ActionLink("Reset Password", "ResetPassword", "Account")
+            </div>
+        } else {
+            <div>
+                @Html.ActionLink("Log In", "Login", "Account")
+                @Html.ActionLink("Register", "Register", "Account")
+            </div>
+        }
+    </div>
+    <div class="clear-floats"></div>
+
+    <div id="topmenu">
+        <div class="topmenulink">@Html.ActionLink("Home Page", "Index", "Home")</div>
+        <div class="topmenulink">@Html.ActionLink("All Photos", "Index", "Photo")</div>
+        @if (Request.IsAuthenticated) {
+            <div class="topmenulink">@Html.ActionLink("Add a Photo", "Create", "Photo")</div>
+        }
+        <div class="topmenulink">@Html.ActionLink("Slideshow", "SlideShow", "Photo")</div>
+        @if (Session["Favorites"] != null) {
+            <div class="topmenulink">@Html.ActionLink("Favorites", "FavoritesSlideshow", "Photo")</div>
+        }
+    </div>
+    
+    <div id="page-content">
+        @RenderBody()
+    </div>
+
+    @RenderSection("Scripts", false)
+</body>
+</html>

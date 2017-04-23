@@ -1,0 +1,65 @@
+﻿@model PhotoSharingApplication.Models.Photo
+
+@{
+    ViewBag.Title = "Photo: " + Model.Title;
+}
+
+<h2>"@Model.Title"</h2>
+      
+@if (Model.PhotoFile != null) {
+    <div class="photo-display">
+        <img width="800" src="@Url.Action("GetImage", "Photo", new { Model.PhotoID })" />
+    </div>
+}
+ 
+<div>
+    <div class="photo-description">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</div>
+
+<div class="photo-metadata">
+    <div>
+        <span class="display-label">
+            Created By:
+        </span>
+        <span class="display-field">
+            @Html.DisplayFor(model => model.UserName)
+        </span>
+    </div>
+
+    <div>
+        <span class="display-label">
+                @Html.DisplayNameFor(model => model.CreatedDate):
+        </span>
+        <span class="display-field">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </span>
+    </div>
+
+    <div>
+        <span class="display-label">
+                @Html.DisplayNameFor(model => model.ModifiedDate):
+        </span>
+        <span class="display-field">
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </span>
+    </div>
+    <div id="addtofavorites">
+        @Ajax.ActionLink("Add to favorites", 
+                        "AddFavorite", 
+                        "Photo",                         
+                        new { PhotoID = Model.PhotoID }, 
+                        new AjaxOptions {
+                            UpdateTargetId = "addtofavorites",
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace
+                        })    
+    </div>
+</div>
+
+@Html.Action("_CommentsForPhoto", "Comment", new { PhotoID = Model.PhotoID })
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

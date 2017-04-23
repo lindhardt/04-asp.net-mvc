@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PhotoSharingApplication.Models.Photo>
+
+@{
+    ViewBag.Title = "SlideShow";
+}
+
+<script type="text/javascript"> 
+
+    function slideSwitch() {
+        //Get the currently displayed image and the next one
+        var $activeCard = $('#slide-show DIV.active-card');
+        //if there is no active one, we'll take the last one
+        if ($activeCard.length == 0) {
+            $activeCard = $('#slide-show DIV.slide-show-card:last')
+        }
+
+        //Get the next image, unless the current one is the last one, in which case get the first image
+        var $nextCard = $activeCard.next().length ? $activeCard.next() : $('#slide-show DIV.slide-show-card:first');
+
+        //Set classes and animate the fade
+        $activeCard.addClass('last-active-card');
+        $nextCard.css({opacity: 0.0})
+            .addClass('active-card')
+            .animate({ opacity: 1.0 }, 1000, function () {
+                //The animation has finished so remove the classes from the old image
+                $activeCard.removeClass('active-card last-active-card');
+            });
+    }
+
+    $(document).ready(function () {
+        //Change the slide every 5 seconds
+        setInterval("slideSwitch()", 5000);
+    });
+</script>
+
+<div id="slide-show">
+    @foreach (var item in Model) {
+
+        <div class="slide-show-card">
+            <h3>
+                @Html.ActionLink(item.Title, "Details", new { id = item.PhotoID })
+            </h3>
+            <p>
+                By @Html.DisplayFor(modelItem => item.UserName)
+            </p>
+            @if (item.PhotoFile != null) {
+                <img height="530" src="@Url.Action("GetImage", "Photo", new { item.PhotoID })" />
+            }
+        </div>
+        
+    }
+</div>
+
