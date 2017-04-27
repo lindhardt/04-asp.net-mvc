@@ -1,4 +1,4 @@
-# Module 2: Designing ASP.NET MVC 5 Web Applications #
+# Developing ASP.NET MVC Web Applications #
 ## Lab: Designing ASP.NET MVC 5 Web Applications ##
 
 ### Scenario ###
