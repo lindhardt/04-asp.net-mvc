@@ -1,0 +1,56 @@
+﻿@model PhotoSharingApplication.Models.Photo
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+<fieldset>
+    <legend>Photo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+
+    </div>
+
+    @if (Model.PhotoFile != null)
+    {
+        <img width="800" src="@Url.Action("GetImage", "Photo", new { id=Model.PhotoID })" />
+    }
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageMimeType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageMimeType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PhotoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
