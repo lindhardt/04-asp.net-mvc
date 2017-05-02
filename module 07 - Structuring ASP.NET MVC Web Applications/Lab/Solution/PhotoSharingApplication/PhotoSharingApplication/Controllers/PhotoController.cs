@@ -61,6 +61,16 @@ namespace PhotoSharingApplication.Controllers
             return View("Display", photo);
         }
 
+        public ActionResult DisplayByTitle(string title)
+        {
+            Photo photo = context.FindPhotoByTitle(title);
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Display", photo);
+        }
+
         public ActionResult Create()
         {
             Photo newPhoto = new Photo();

@@ -12,6 +12,8 @@
 <body>
     <div>
         <h2>All Photos</h2>
+        Menu: @Html.MvcSiteMap().Menu(false, false, true)
+        Current Location: @Html.MvcSiteMap().SiteMapPath()
 
         <p>
             @Html.ActionLink("Add a Photo", "Create", "Photo")
