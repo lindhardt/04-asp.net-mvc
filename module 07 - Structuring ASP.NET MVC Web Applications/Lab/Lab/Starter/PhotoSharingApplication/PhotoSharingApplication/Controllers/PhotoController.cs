@@ -27,7 +27,6 @@ namespace PhotoSharingApplication.Controllers
 
         //
         // GET: /Photo/
-
         public ActionResult Index()
         {
             return View("Index");
@@ -55,7 +54,6 @@ namespace PhotoSharingApplication.Controllers
         public ActionResult Display(int id)
         {
             Photo photo = context.FindPhotoById(id);
-            //Photo photo = context.Photos.Find(id);
             if (photo == null)
             {
                 return HttpNotFound();
@@ -87,7 +85,6 @@ namespace PhotoSharingApplication.Controllers
                     image.InputStream.Read(photo.PhotoFile, 0, image.ContentLength);
                 }
                 context.Add<Photo>(photo);
-                //context.Photos.Add(photo);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -96,7 +93,6 @@ namespace PhotoSharingApplication.Controllers
         public ActionResult Delete(int id)
         {
             Photo photo = context.FindPhotoById(id);
-            //Photo photo = context.Photos.Find(id);
             if (photo == null)
             {
                 return HttpNotFound();
@@ -109,9 +105,7 @@ namespace PhotoSharingApplication.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Photo photo = context.FindPhotoById(id);
-            //Photo photo = context.Photos.Find(id);
             context.Delete<Photo>(photo);
-            //context.Photos.Remove(photo);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -119,7 +113,6 @@ namespace PhotoSharingApplication.Controllers
         public FileContentResult GetImage(int id)
         {
             Photo photo = context.FindPhotoById(id);
-            //Photo photo = context.Photos.Find(id);
             if (photo != null)
             {
                 return File(photo.PhotoFile, photo.ImageMimeType);
