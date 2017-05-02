@@ -57,6 +57,42 @@ namespace PhotoSharingTests
         }
 
         [TestMethod]
+        public void Test_DisplayByTitle_Return_Photo()
+        {
+            //This test checks that the PhotoController DisplayByTitle action returns the right photo
+            var context = new FakePhotoSharingContext();
+            context.Photos = new[] {
+                new Photo{ PhotoID = 1, Title="Photo1" },
+                new Photo{ PhotoID = 2, Title="Photo2" },
+                new Photo{ PhotoID = 3, Title="Photo3" },
+                new Photo{ PhotoID = 4, Title="Photo4" }
+            }.AsQueryable();
+
+            var controller = new PhotoController(context);
+            var result = controller.DisplayByTitle("Photo2") as ViewResult;
+            var resultPhoto = (Photo)result.Model;
+            Assert.AreEqual(2, resultPhoto.PhotoID);
+        }
+
+        [TestMethod]
+        public void Test_DisplayByTitle_Return_Null()
+        {
+            //This test checks that the PhotoController DisplayByTitle action returns
+            //HttpNotFound when you request a title that doesn't exist
+            var context = new FakePhotoSharingContext();
+            context.Photos = new[] {
+                new Photo{ PhotoID = 1, Title="Photo1" },
+                new Photo{ PhotoID = 2, Title="Photo2" },
+                new Photo{ PhotoID = 3, Title="Photo3" },
+                new Photo{ PhotoID = 4, Title="Photo4" }
+            }.AsQueryable();
+
+            var controller = new PhotoController(context);
+            var result = controller.DisplayByTitle("NonExistentTitle");
+            Assert.AreEqual(typeof(HttpNotFoundResult), result.GetType());
+        }
+
+        [TestMethod]
         public void Test_PhotoGallery_No_Parameter()
         {
             //This test checks that, when you call the _PhotoGallery action with no
