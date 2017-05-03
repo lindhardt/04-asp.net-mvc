@@ -1,4 +1,4 @@
-﻿using MvcSiteMapProvider.Extensibility;
+﻿using MvcSiteMapProvider;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace PhotoSharingApplication.Models
     {
         PhotoSharingContext context = new PhotoSharingContext();
 
-        public override IEnumerable<DynamicNode> GetDynamicNodeCollection()
+        public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
         {
             List<DynamicNode> returnList = new List<DynamicNode>();
 

@@ -124,6 +124,7 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IPhotoSharingContext.cs" />
     <Compile Include="Models\Photo.cs" />
+    <Compile Include="Models\PhotoDynamicNodeProvider.cs" />
     <Compile Include="Models\PhotoSharingContext.cs" />
     <Compile Include="Models\PhotoSharingInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +150,7 @@
     <None Include="MvcSiteMapSchema.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Photo\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
