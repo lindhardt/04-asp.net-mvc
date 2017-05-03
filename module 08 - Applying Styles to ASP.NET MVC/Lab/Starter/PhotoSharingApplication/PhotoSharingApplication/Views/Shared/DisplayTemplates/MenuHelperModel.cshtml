@@ -2,12 +2,10 @@
 @using System.Web.Mvc.Html
 @using MvcSiteMapProvider.Web.Html.Models
 
-<ul id="menu">
-    @foreach (var node in Model.Nodes) { 
-        <li>@Html.DisplayFor(m => node) 
-            @if (node.Children.Any()) {
-                @Html.DisplayFor(m => node.Children)
-            }
-        </li>
-    }
-</ul>
+@foreach (var node in Model.Nodes) { 
+    <div class="topmenulink">@Html.DisplayFor(m => node) 
+        @if (node.Children.Any()) {
+            @Html.DisplayFor(m => node.Children)
+        }
+    </div>
+}

@@ -2,22 +2,39 @@
 
 @foreach (var item in Model)
 {
+<div>
     <h3>"@item.Title"</h3>
     
-    if (item.PhotoFile != null)
+    @if (item.PhotoFile != null)
     {
-        <img width="200" src="@Url.Action("GetImage", "Photo", new { id = item.PhotoID })" />
+        <div>
+            <img width="200" src="@Url.Action("GetImage", "Photo", new { id = item.PhotoID })" />
+        </div>
     }
     
-    <p>
-        Created By:
-        @Html.DisplayFor(model => item.UserName)
-    </p>
+    <div>
+        
+        <div>
+            <span>
+                Created By:
+            </span>
+            <span>
+                @Html.DisplayFor(model => item.UserName)
+            </span>
+        </div>
     
-    <p>
-        Created On:
-        @Html.DisplayFor(model => item.CreatedDate)
-    </p>
+        <div>
+            <span>
+                Created On:
+            </span>
+            <span>
+                @Html.DisplayFor(model => item.CreatedDate)
+            </span>
+        </div>
+
+    </div>
     
-    @Html.ActionLink("Display", "Display", new { id = item.PhotoID })
+    @Html.ActionLink("Display", "Display", new { id = item.PhotoID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.PhotoID })
+</div>
 }
