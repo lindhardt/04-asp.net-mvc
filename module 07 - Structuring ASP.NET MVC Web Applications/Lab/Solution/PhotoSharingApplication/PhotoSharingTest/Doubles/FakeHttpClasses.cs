@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 
 
-namespace PhotoSharingTests.Doubles
+namespace PhotoSharingTest.Doubles
 {
 
     public class FakeHttpContextForRouting : HttpContextBase

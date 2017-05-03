@@ -5,9 +5,9 @@ using PhotoSharingApplication.Controllers;
 using PhotoSharingApplication.Models;
 using System.Collections.Generic;
 using System.Linq;
-using PhotoSharingTests.Doubles;
+using PhotoSharingTest.Doubles;
 
-namespace PhotoSharingTests
+namespace PhotoSharingTest
 {
     [TestClass]
     public class PhotoControllerTests

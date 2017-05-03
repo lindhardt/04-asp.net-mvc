@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PhotoSharingTests.Doubles;
+using PhotoSharingTest.Doubles;
 using System.Web.Routing;
 using PhotoSharingApplication;
 using System.Web.Mvc;
 
-namespace PhotoSharingTests
+namespace PhotoSharingTest
 {
     [TestClass]
     public class RoutingTests
