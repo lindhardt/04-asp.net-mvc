@@ -1,27 +1,10 @@
-﻿
-
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Welcome to Adventure Works Photo Sharing";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Welcome to Adventure Works Photo Sharing</title>
-</head>
-<body>
-    <div>
-        <p>Welcome to Adventure Works Photo Sharing! Use this site to share your adventures.</p>
-
-        Menu: @Html.MvcSiteMap().Menu(false, false, true)
-        Current Location: @Html.MvcSiteMap().SiteMapPath()
+<p>Welcome to Adventure Works Photo Sharing! Use this site to share your adventures.</p>
             
-        <h2>Latest Photos:</h2>
+<h2>Latest Photos:</h2>
 
-        @Html.Action("_PhotoGallery", "Photo", new { number = 3 })
+@Html.Action("_PhotoGallery", "Photo", new { number = 3 })
     
-    </div>
-</body>
-</html>

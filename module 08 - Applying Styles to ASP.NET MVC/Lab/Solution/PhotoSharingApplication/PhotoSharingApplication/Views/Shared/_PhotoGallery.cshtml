@@ -2,32 +2,31 @@
 
 @foreach (var item in Model)
 {
-<div>
+    
+<div class="photo-index-card">
     <h3>"@item.Title"</h3>
     
     @if (item.PhotoFile != null)
     {
-        <div>
-            <img width="200" src="@Url.Action("GetImage", "Photo", new { id = item.PhotoID })" />
-        </div>
+        <img class="photo-index-card-img" src="@Url.Action("GetImage", "Photo", new { id = item.PhotoID })" />
     }
     
-    <div>
+    <div class="photo-metadata">
         
         <div>
-            <span>
+            <span class="display-label">
                 Created By:
             </span>
-            <span>
+            <span class="display-field">
                 @Html.DisplayFor(model => item.UserName)
             </span>
         </div>
     
         <div>
-            <span>
+            <span class="display-label">
                 Created On:
             </span>
-            <span>
+            <span class="display-field">
                 @Html.DisplayFor(model => item.CreatedDate)
             </span>
         </div>
@@ -36,5 +35,6 @@
     
     @Html.ActionLink("Display", "Display", new { id = item.PhotoID }) |
     @Html.ActionLink("Delete", "Delete", new { id = item.PhotoID })
-</div>
+
+    </div>
 }
