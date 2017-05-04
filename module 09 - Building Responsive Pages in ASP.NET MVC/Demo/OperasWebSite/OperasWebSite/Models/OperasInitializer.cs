@@ -38,6 +38,32 @@ namespace OperasWebSite.Models
 
             operas.ForEach(s => context.Operas.Add(s));
             context.SaveChanges();
+
+            var reviews = new List<Review>
+            {
+                new Review {
+                    OperaID = 1,
+                    Date = new DateTime(2002, 4, 20),
+                    Company = "Metropolitan Opera",
+                    ReviewText = "Not a bad version, but a little unimaginative"
+                },
+                new Review {
+                    OperaID = 1,
+                    Date = new DateTime(2007, 11, 3),
+                    Company = "Opera Company of Philadelphia",
+                    ReviewText = "The best I've seen."
+                },
+                new Review {
+                    OperaID = 1,
+                    Date = new DateTime(2002, 4, 20),
+                    Company = "Washington National Opera",
+                    ReviewText = "Set in the modern world, which I think really detracted from the drama."
+                }
+            };
+
+            reviews.ForEach(r => context.Reviews.Add(r));
+            context.SaveChanges();
+
         }
     }
 }

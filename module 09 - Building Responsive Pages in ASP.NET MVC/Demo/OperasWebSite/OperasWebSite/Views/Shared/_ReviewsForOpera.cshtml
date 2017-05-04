@@ -1,0 +1,26 @@
+﻿@model IEnumerable<OperasWebSite.Models.Review>
+
+<h3>Reviews</h3>
+
+<div id="reviews-tool">
+    @foreach (var item in Model)
+    {
+        <div class="review" style="margin: 30px;">
+
+            <div>
+                Performance Date:
+                @Html.DisplayFor(modelItem => item.Date)
+            </div>
+
+            <div class="photo-comment-subject">
+                Company:
+                @Html.DisplayFor(modelItem => item.Company)
+            </div>
+
+            <div class="photo-comment-body">
+                @Html.DisplayFor(modelItem => item.ReviewText)
+            </div>
+
+        </div>
+    }
+</div>

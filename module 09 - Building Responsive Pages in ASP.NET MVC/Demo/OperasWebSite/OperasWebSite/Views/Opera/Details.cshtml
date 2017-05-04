@@ -26,6 +26,9 @@
             @Html.DisplayFor(model => model.Composer)
         </span>
     </div>
+
+    @Html.Action("_ReviewsForOpera", "Review", new { OperaId = Model.OperaID })
+
     <p>
         @Html.ActionLink("Back to List", "Index")
     </p>

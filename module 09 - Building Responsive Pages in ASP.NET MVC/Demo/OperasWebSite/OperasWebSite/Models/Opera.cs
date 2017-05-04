@@ -16,6 +16,9 @@ namespace OperasWebSite.Models
         public int Year { get; set; }
         [Required]
         public string Composer { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
+
     }
 
     public class CheckValidYear : ValidationAttribute

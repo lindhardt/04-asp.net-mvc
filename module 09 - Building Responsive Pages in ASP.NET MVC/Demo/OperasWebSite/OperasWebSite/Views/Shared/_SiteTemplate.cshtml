@@ -1,0 +1,25 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="~/content/OperasStyles.css" />
+</head>
+<body>
+    <div>
+        <h1>Operas I Have Seen</h1>
+        <div class="topmenu">
+            @Html.MvcSiteMap().Menu(false, true, true)
+        </div>
+        <div class="clear-floats" />
+        <div class="breadcrumb"></div>
+            Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
+        </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
