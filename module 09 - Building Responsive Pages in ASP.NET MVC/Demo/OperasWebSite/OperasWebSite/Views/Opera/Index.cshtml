@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OperasWebSite.Models.Opera>
+
+@{
+    ViewBag.Title = "Index of Operas";
+}
+
+    <h2>
+        Main Opera List
+    </h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table style="width: 600px;">
+        <tr style="background-color: lightgrey;">
+            <th style="width: 200px;">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th style="width: 100px;">
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th style="width: 300px;">
+                @Html.DisplayNameFor(model => model.Composer)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Composer)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id=item.OperaID })
+            </td>
+        </tr>
+    }
+    
+    </table>
