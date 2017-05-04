@@ -31,7 +31,7 @@ namespace PhotoSharingApplication.Models
                     UserName = "RogerLengel",
                     PhotoFile = getFileBytes("\\Images\\orchard.jpg"),
                     ImageMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today.AddDays(-4)
+                    CreatedDate = DateTime.Today.AddDays(-14)
                 },
                 new Photo {
                     Title = "Sample Photo 3",
@@ -39,7 +39,7 @@ namespace PhotoSharingApplication.Models
                     UserName = "AllisonBrown",
                     PhotoFile = getFileBytes("\\Images\\path.jpg"),
                     ImageMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today.AddDays(-3)
+                    CreatedDate = DateTime.Today.AddDays(-14)
                 },
                 new Photo {
                     Title = "Sample Photo 4",
@@ -47,7 +47,7 @@ namespace PhotoSharingApplication.Models
                     UserName = "JimCorbin",
                     PhotoFile = getFileBytes("\\Images\\fungi.jpg"),
                     ImageMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today.AddDays(-2)
+                    CreatedDate = DateTime.Today.AddDays(-12)
                 },
                 new Photo {
                     Title = "Sample Photo 5",
@@ -55,7 +55,7 @@ namespace PhotoSharingApplication.Models
                     UserName = "JamieStark",
                     PhotoFile = getFileBytes("\\Images\\pinkflower.jpg"),
                     ImageMimeType = "image/jpeg",
-                    CreatedDate = DateTime.Today.AddDays(-1)
+                    CreatedDate = DateTime.Today.AddDays(-11)
                 },
                 new Photo {
                     Title = "Sample Photo 6",
