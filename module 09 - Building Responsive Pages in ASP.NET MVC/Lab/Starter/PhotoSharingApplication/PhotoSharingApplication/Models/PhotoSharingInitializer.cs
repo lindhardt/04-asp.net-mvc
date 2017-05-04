@@ -56,6 +56,70 @@ namespace PhotoSharingApplication.Models
                     PhotoFile = getFileBytes("\\Images\\pinkflower.jpg"),
                     ImageMimeType = "image/jpeg",
                     CreatedDate = DateTime.Today.AddDays(-1)
+                },
+                new Photo {
+                    Title = "Sample Photo 6",
+                    Description = "This is the sixth sample photo in the Adventure Works photo application",
+                    UserName = "JamieStark",
+                    PhotoFile = getFileBytes("\\Images\\blackberries.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-11)
+                },
+                new Photo {
+                    Title = "Sample Photo 7",
+                    Description = "This is the seventh sample photo in the Adventure Works photo application",
+                    UserName = "BernardDuerr",
+                    PhotoFile = getFileBytes("\\Images\\coastalview.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-10)
+                },
+                new Photo {
+                    Title = "Sample Photo 8",
+                    Description = "This is the eigth sample photo in the Adventure Works photo application",
+                    UserName = "FengHanYing",
+                    PhotoFile = getFileBytes("\\Images\\headland.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-9)
+                },
+                new Photo {
+                    Title = "Sample Photo 9",
+                    Description = "This is the ninth sample photo in the Adventure Works photo application",
+                    UserName = "FengHanYing",
+                    PhotoFile = getFileBytes("\\Images\\pebbles.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-8)
+                },
+                new Photo {
+                    Title = "Sample Photo 10",
+                    Description = "This is the tenth sample photo in the Adventure Works photo application",
+                    UserName = "SalmanMughal",
+                    PhotoFile = getFileBytes("\\Images\\pontoon.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-7)
+                },
+                new Photo {
+                    Title = "Sample Photo 11",
+                    Description = "This is the eleventh sample photo in the Adventure Works photo application",
+                    UserName = "JamieStark",
+                    PhotoFile = getFileBytes("\\Images\\ripples.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-5)
+                },
+                new Photo {
+                    Title = "Sample Photo 12",
+                    Description = "This is the twelth sample photo in the Adventure Works photo application",
+                    UserName = "JimCorbin",
+                    PhotoFile = getFileBytes("\\Images\\rockpool.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-3)
+                },
+                new Photo {
+                    Title = "Sample Photo 13",
+                    Description = "This is the thirteenth sample photo in the Adventure Works photo application",
+                    UserName = "AllisonBrown",
+                    PhotoFile = getFileBytes("\\Images\\track.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today.AddDays(-1)
                 }
             };
             photos.ForEach(s => context.Photos.Add(s));

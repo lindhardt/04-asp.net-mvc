@@ -107,11 +107,19 @@
     <Content Include="Content\PhotoSharingStyles.css" />
     <Content Include="Error.html" />
     <Content Include="Global.asax" />
+    <Content Include="Images\blackberries.JPG" />
+    <Content Include="Images\coastalview.jpg" />
     <Content Include="Images\flower.JPG" />
     <Content Include="Images\fungi.JPG" />
+    <Content Include="Images\headland.jpg" />
     <Content Include="Images\orchard.JPG" />
     <Content Include="Images\path.JPG" />
+    <Content Include="Images\pebbles.jpg" />
     <Content Include="Images\pinkflower.JPG" />
+    <Content Include="Images\pontoon.JPG" />
+    <Content Include="Images\ripples.jpg" />
+    <Content Include="Images\rockpool.jpg" />
+    <Content Include="Images\track.JPG" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
