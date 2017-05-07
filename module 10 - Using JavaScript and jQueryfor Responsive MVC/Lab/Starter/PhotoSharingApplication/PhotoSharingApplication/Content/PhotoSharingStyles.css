@@ -1,0 +1,190 @@
+﻿body {
+    background: #7f9aae;
+    background-image: url('BackgroundGradient.jpg');
+    background-repeat: repeat-x;
+    font-family: segoe ui, verdana, arial, sans-serif;
+    font-weight: 300;
+    color: #FBFBFB;
+    
+}
+
+.site-page-title {
+    float: left;
+    width: 600px;
+}
+
+.login-controls {
+    float: right;
+    width: 200px;
+    background-color:#608dae;
+    height: 25px;
+    line-height: 2em;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.clear-floats {
+    clear: both;
+}
+
+#topmenu {
+    background-color: #808080;
+    height: 45px;
+    border-radius: 10px;
+}
+
+.topmenulink {
+    float: left;
+    background-color: #cccccc;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.display-label {
+    display: inline-block;
+    width: 150px;
+    margin: 2px;
+}
+
+.display-field {
+    margin: 2px;
+    width: 350px;
+}
+
+.editor-label {
+    display: inline-block;
+    width: 250px;
+    margin: 2px;
+    vertical-align: top;
+}
+
+.editor-field {
+    display: inline-block;
+    width: 800px;
+    margin: 2px;
+}
+
+.text-box {
+    width: 400px;
+}
+
+.multi-line {
+    height: 200px;
+}
+
+.pic-upload-input {
+    width: 400px;    
+}
+
+.photo-index-card {
+    background-color: #eeeeee;
+    border-color: #538345;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    color: #333333;
+    padding: 15px;
+    margin: 5px;
+    height: 500px;
+    width: 280px;
+    float: left;
+}
+
+.photo-index-card-img {
+	width: 250px;
+	max-height: 320px;
+}
+
+.photo-metadata {
+    width: 800px;
+    border: 1px, solid, black;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.photo-description {
+    min-height: 100px;
+    width: 770px;
+    background-color: #eeeeee;
+    border-color: #538345;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    color: #333333;
+    padding: 15px;
+}
+
+.photo-comment {
+    min-height: 100px;
+    width: 770px;
+    color: #ffffff;
+    background-color: #220d58;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 15px;    
+    margin: 5px;
+}
+
+.add-comment-box {
+    width: 770px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 15px;    
+    margin: 5px;   
+}
+
+.photo-comment-body {
+    margin: 15px;
+}
+
+.field-validation-error {
+    color: #b72323;
+}
+
+#slide-show {
+    position:relative;
+    height: 650px;
+}
+
+#slide-show DIV.slide-show-card {
+    height: 600px;
+    background-color: #eeeeee;
+    border-color: #538345;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    color: #333333;
+    padding: 15px;
+    margin: 5px;
+    height: 650px;
+    width: 800px;
+}
+
+#slideshow-progress-bar-container {
+    margin: 5px;
+    width: 834px;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .topmenulink {
+        float: left;
+        background-color: #cccccc;
+        width: 100px;
+        height: 35px;
+        text-align: center;
+        line-height: 2em;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+}

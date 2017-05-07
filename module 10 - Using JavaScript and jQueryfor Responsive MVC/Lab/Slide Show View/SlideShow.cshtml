@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PhotoSharingApplication.Models.Photo>
+
+@{
+    ViewBag.Title = "SlideShow";
+}
+
+
+<h2>Slide Show</h2>
+
+<div id="slideshow-progress-bar-container">
+
+</div>
+
+<div id="slide-show">
+    @foreach (var item in Model) {
+
+        <div class="slide-show-card">
+            <h3>
+                @Html.ActionLink(item.Title, "Details", new { id = item.PhotoID })
+            </h3>
+            <p>
+                By @Html.DisplayFor(modelItem => item.UserName)
+            </p>
+            @if (item.PhotoFile != null) {
+                <img height="530" src="@Url.Action("GetImage", "Photo", new { id = item.PhotoID })" />
+            }
+        </div>
+        
+    }
+
+</div>
