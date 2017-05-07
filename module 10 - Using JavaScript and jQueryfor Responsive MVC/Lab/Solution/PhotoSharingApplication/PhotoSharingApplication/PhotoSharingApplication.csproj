@@ -120,6 +120,7 @@
     <Content Include="Images\ripples.jpg" />
     <Content Include="Images\rockpool.jpg" />
     <Content Include="Images\track.JPG" />
+    <Content Include="Scripts\SlideShow.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +170,7 @@
     <Content Include="Views\Comment\Delete.cshtml" />
     <Content Include="Views\Shared\_CommentsForPhoto.cshtml" />
     <Content Include="Views\Shared\_CreateAComment.cshtml" />
+    <Content Include="Views\Photo\SlideShow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
