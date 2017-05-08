@@ -12,6 +12,20 @@
 <body>
 
     <h1 class="site-page-title">Adventure Works Photo Sharing</h1>
+    <div class="login-controls">
+        @if (Request.IsAuthenticated) {
+            <div>
+                Hello, @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(User.Identity.Name).
+                @Html.ActionLink("Log Off", "LogOff", "Account")
+                @Html.ActionLink("Reset", "ResetPassword", "Account")
+            </div>
+        } else {
+            <div>
+                @Html.ActionLink("Log In", "Login", "Account")
+                @Html.ActionLink("Register", "Register", "Account")
+            </div>
+        }
+    </div>
     <div class="clear-floats" />
 
     <div id="topmenu">

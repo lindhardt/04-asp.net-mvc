@@ -58,6 +58,7 @@ namespace PhotoSharingApplication.Controllers
 
         //
         // GET: /Comment/_Create. A Partial View for displaying the create comment tool as a AJAX partial page update
+        [Authorize]
         public PartialViewResult _Create(int PhotoId)
         {
             //Create the new comment
@@ -72,6 +73,7 @@ namespace PhotoSharingApplication.Controllers
 
         //
         // GET: /Comment/Delete/5
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Comment comment = context.FindCommentById(id);
@@ -85,6 +87,7 @@ namespace PhotoSharingApplication.Controllers
 
         //
         // POST: /Comment/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {

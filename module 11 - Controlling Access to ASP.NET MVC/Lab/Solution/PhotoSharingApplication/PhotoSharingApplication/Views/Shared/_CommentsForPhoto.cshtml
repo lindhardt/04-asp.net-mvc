@@ -34,7 +34,14 @@
     </div>
 
     <div id="addcomment" class="add-comment-box">
-        @Html.Action("_Create", "Comment", new { PhotoID = ViewBag.PhotoId })
+        @if (Request.IsAuthenticated)
+        {
+            @Html.Action("_Create", "Comment", new { PhotoID = ViewBag.PhotoId })
+        }
+        else
+        {
+            @Html.ActionLink("To comment you must log in", "Login", "Account")
+        }
     </div>
 </div>
 }
