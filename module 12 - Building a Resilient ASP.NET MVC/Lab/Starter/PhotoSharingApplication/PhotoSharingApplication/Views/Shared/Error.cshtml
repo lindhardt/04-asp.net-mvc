@@ -1,0 +1,10 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Custom Error";
+}
+
+<h1>MVC Error</h1>
+Controller: @Model.ControllerName <br />
+Action: @Model.ActionName <br />
+Message: @Model.Exception.Message
