@@ -142,5 +142,40 @@ namespace PhotoSharingApplication.Controllers
         {
             return View("SlideShow", context.Photos.ToList());
         }
+
+        public ActionResult FavoritesSlideshow()
+        {
+            List<Photo> favPhotos = new List<Photo>();
+            List<int> favoriteIds = Session["Favorites"] as List<int>;
+            if (favoriteIds == null)
+            {
+                favoriteIds = new List<int>();
+            }
+            Photo currentPhoto;
+
+            foreach (int favID in favoriteIds)
+            {
+                currentPhoto = context.FindPhotoById(favID);
+                if (currentPhoto != null)
+                {
+                    favPhotos.Add(currentPhoto);
+                }
+            }
+
+            return View("SlideShow", favPhotos);
+        }
+
+        public ContentResult AddFavorite(int PhotoID)
+        {
+            List<int> favorites = Session["Favorites"] as List<int>;
+            if (favorites == null)
+            {
+                favorites = new List<int>();
+            }
+            favorites.Add(PhotoID);
+            Session["Favorites"] = favorites;
+            return Content("The picture has been added to your favorites", "text/plain", System.Text.Encoding.Default);
+        }
+
     }
 }
