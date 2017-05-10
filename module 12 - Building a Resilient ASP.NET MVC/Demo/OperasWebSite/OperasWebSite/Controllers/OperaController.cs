@@ -45,12 +45,14 @@ namespace OperasWebSite.Controllers
             return View("Details", opera);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             Opera newOpera = new Opera();
             return View("Create", newOpera);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult Create(Opera newOpera)
         {

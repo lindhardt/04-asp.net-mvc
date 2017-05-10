@@ -1,5 +1,11 @@
 ﻿@model IEnumerable<OperasWebSite.Models.Review>
 
+<script>
+    $(function () {
+        $('#reviews-tool').accordion();
+    });
+</script>
+
 <h3>Reviews</h3>
 
 @using (Ajax.BeginForm("_ReviewsForOpera",
@@ -10,7 +16,6 @@
 <div id="reviews-tool">
     @foreach (var item in Model)
     {
-
         <h3>
             Performance Date:
             @Html.DisplayFor(modelItem => item.Date)

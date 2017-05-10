@@ -18,7 +18,7 @@ namespace OperasWebSite.Controllers
 
         public ActionResult About()
         {
-            return View("");
+            return View();
         }
 
     }
