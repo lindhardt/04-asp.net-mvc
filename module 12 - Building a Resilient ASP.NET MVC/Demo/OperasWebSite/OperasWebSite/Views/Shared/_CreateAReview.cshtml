@@ -1,0 +1,40 @@
+﻿@model OperasWebSite.Models.Review
+
+<div class="add-review-tool">
+
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Date):
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Date)
+                @Html.ValidationMessageFor(model => model.Date)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Company):
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Company)
+                @Html.ValidationMessageFor(model => model.Company)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.ReviewText):
+            </td>
+            <td>
+                @Html.EditorFor(model => model.ReviewText)
+                @Html.ValidationMessageFor(model => model.ReviewText)
+            </td>
+        </tr>
+
+    </table>
+
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+
+</div>
