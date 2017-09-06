@@ -5,7 +5,7 @@
 
   <mvcSiteMapNode title="Home" visibility="*" controller="Home" action="Index">
     <mvcSiteMapNode title="All Operas" visibility="*" controller="Opera" action="Index" key="AllOperas">
-      <mvcSiteMapNode title="Display" visibility="SiteMapPathHelper,!*" controller="Opera" action="Details" dynamicNodeProvider="OperasWebSites.Models.OperaDynamicNodeProvider, OperasWebSites" />
+      <mvcSiteMapNode title="Display" visibility="SiteMapPathHelper,!*" controller="Opera" action="Details" dynamicNodeProvider="OperasWebSite.Models.OperaDynamicNodeProvider, OperasWebSite" />
     </mvcSiteMapNode>
     <mvcSiteMapNode title="About" visibility="*" controller="Home" action="About"/>
   </mvcSiteMapNode>
