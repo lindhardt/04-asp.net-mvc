@@ -1,0 +1,43 @@
+﻿@model OperasWebSite.Models.Opera
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div>
+        <h2>Add an Opera</h2>
+
+        @using (Html.BeginForm("Create", "Opera", FormMethod.Post))
+        {
+            <p>
+                @Html.LabelFor(model => model.Title):
+                @Html.EditorFor(model  => model.Title)
+                @Html.ValidationMessageFor(model => model.Title)
+            </p>
+            
+            <p>
+                @Html.LabelFor(model => model.Year):
+                @Html.EditorFor(model => model.Year)
+                @Html.ValidationMessageFor(model => model.Year)
+            </p>
+            
+            <p>
+                @Html.LabelFor(model => model.Composer):
+                @Html.EditorFor(model => model.Composer)
+                @Html.ValidationMessageFor(model => model.Composer)
+            </p>
+            
+            <input type="submit" value="Create" />
+            @Html.ActionLink("Back to List", "Index")
+        }
+    </div>
+</body>
+</html>
