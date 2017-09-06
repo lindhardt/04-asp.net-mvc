@@ -34,7 +34,11 @@
     border-radius: 10px;
 }
 
-.topmenulink {
+#menu {
+    list-style: none;
+}
+
+#menu li {
     float: left;
     background-color: #cccccc;
     width: 200px;
@@ -43,6 +47,17 @@
     line-height: 2em;
     border-radius: 5px;
     margin: 5px;
+}
+
+#menu li ul {
+    position: absolute;
+    z-index: 100;
+    display:none;
+    list-style: none;
+}
+
+#menu li:hover>ul {
+    display:block;
 }
 
 .display-label {
