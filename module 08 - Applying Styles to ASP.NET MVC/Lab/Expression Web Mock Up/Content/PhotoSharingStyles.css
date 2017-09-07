@@ -38,6 +38,10 @@
     list-style: none;
 }
 
+#menu a {
+    text-decoration: none;
+}
+
 #menu li {
     float: left;
     background-color: #cccccc;
