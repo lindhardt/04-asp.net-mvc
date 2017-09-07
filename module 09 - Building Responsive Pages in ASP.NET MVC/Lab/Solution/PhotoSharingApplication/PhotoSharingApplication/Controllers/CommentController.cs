@@ -68,8 +68,6 @@ namespace PhotoSharingApplication.Controllers
             return PartialView("_CreateAComment");
         }
 
-
-
         //
         // GET: /Comment/Delete/5
         public ActionResult Delete(int id = 0)

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI;
 using System.Globalization;
 using PhotoSharingApplication.Models;
+using System.Web.UI;
 
 namespace PhotoSharingApplication.Controllers
 {
@@ -28,7 +28,7 @@ namespace PhotoSharingApplication.Controllers
 
         //
         // GET: /Photo/
-        [OutputCache(Duration=600, Location=OutputCacheLocation.Server, VaryByParam="none")]
+        [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "none")]
         public ActionResult Index()
         {
             return View("Index");
@@ -122,7 +122,6 @@ namespace PhotoSharingApplication.Controllers
             return RedirectToAction("Index");
         }
 
-        [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
         public FileContentResult GetImage(int id)
         {
             Photo photo = context.FindPhotoById(id);
