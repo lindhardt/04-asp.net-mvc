@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Operas I Have Seen";
+}
+
+
+        
+<p>
+    Welcome! On this site I'm going to discuss my hobby: listening
+    to opera. Start by looking at the 
+    @Html.ActionLink("operas I've seen.", "Index", "Opera")
+</p>
+
+<form>
+    <input type="button" value="Get Latest Quote" name="GetLatestQuote" onclick="callWebService();" />
+    <p id="quote-display"></p>
+</form>
+
+<script type="text/javascript">
+
+    function callWebService() {
+        var serviceUrl = '@Url.Content("~/WebServices/QuotesService.asmx")';
+        $.ajax({
+            type: "POST",
+            url: serviceUrl + "/LatestQuote",
+            data: {},
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: OnSuccess,
+            error: OnError
+        });
+    }
+
+    function OnSuccess(response) {
+        $('#quote-display').html(response.d);
+    }
+
+    function OnError(response) {
+        $('#quote-display').html("Could not obtain the latest quote");
+    }
+
+</script>
+
+<p>
+    @Html.ActionLink("Enter the Operas Chat Room", "Chat")
+</p>
+
+<p>
+    Choose a background color:
+    @Html.ActionLink("Pink", "SetBackground", new { color = "#dc9797" })
+    @Html.ActionLink("Blue", "SetBackground", new {color = "#82bbf2" })
+</p>
+
+

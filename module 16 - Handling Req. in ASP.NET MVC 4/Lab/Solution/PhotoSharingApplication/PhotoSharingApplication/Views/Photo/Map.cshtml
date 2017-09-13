@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_MapLayout.cshtml";
+    ViewBag.Title = "Map of All Photos";
+}
+
+<script type="text/javascript">
+
+    //Set up variables for use in the scripts
+    var webApiUrl = '@Url.Content("~/api/photos")';
+    var pictureUrl = '@Url.Action("GetImage", "Photo")/';
+    var displayUrl = '@Url.Action("Display", "Photo")/';
+
+</script>
+
+<script src="@Url.Content("~/Scripts/MapDisplay.js")" type="text/javascript"></script>
+
+<div id="mapDiv" style="position:absolute; width:650px; height:400px;"></div>
+

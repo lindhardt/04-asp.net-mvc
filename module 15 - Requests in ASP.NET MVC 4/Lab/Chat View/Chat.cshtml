@@ -1,0 +1,30 @@
+﻿@model PhotoSharingApplication.Models.Photo
+
+@{
+    ViewBag.Title = "Chat";
+}
+
+<h2>Chat about "@Model.Title"</h2>
+
+<div id="chat-photo-display">
+@if (Model.PhotoFile != null) {
+    <div class="photo-display">
+        <a href="@Url.Action("Display", "Photo", new { id = Model.PhotoID })">
+            <img width="200" src="@Url.Action("GetImage", "Photo", new { id = Model.PhotoID })" />
+        </a>
+    </div>
+}
+
+    <div class="chat-photo-description">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</div>
+
+<div id="chat-conversation">
+    <input type="text" id="chat-message" />
+    <input type="button" id="sendmessage" value="Send" />
+    <ul id="discussion">
+    </ul>
+</div>
+
+<div class="clear-floats"></div>

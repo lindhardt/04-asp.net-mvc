@@ -1,0 +1,42 @@
+﻿@model PhotoSharingApplication.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<hgroup class="title">
+    <h2>@ViewBag.Title.</h2>
+    <p>You must log in to complete that action. Enter your credentials below.</p>
+</hgroup>
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
+
+    <div>
+        <span class="editor-label">
+            @Html.LabelFor(m => m.UserName)
+        </span>
+        <span class="editor-field">
+            @Html.TextBoxFor(m => m.UserName, new { @class = "text-box" })
+        </span>
+    </div>
+    
+    <div>
+        <span class="editor-label">
+            @Html.LabelFor(m => m.Password)
+        </span>
+        <span class="editor-field">
+                @Html.PasswordFor(m => m.Password, new { @class = "text-box" })
+        </span>
+    </div>
+    
+    <div class="editorfield">
+            @Html.CheckBoxFor(m => m.RememberMe)
+            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+    </div>
+    <input type="submit" value="Log in" />
+
+    <p>
+        @Html.ActionLink("Register", "Register") if you don't have an account.
+    </p> 
+}

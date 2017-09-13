@@ -1,0 +1,67 @@
+﻿body {
+    background-color: #dc9797;
+    font-family: segoe ui, verdana, arial, sans-serif;
+    font-weight: 300;
+    color: #220d58;
+}
+
+.site-page-title {
+    float: left;
+    width: 600px;
+}
+
+.clear-floats {
+    clear: both;
+}
+
+#topmenu {
+    background-color: #808080;
+    height: 45px;
+}
+
+.topmenulink {
+    float: left;
+    background-color: #cccccc;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    line-height: 2em;
+    margin: 5px;
+}
+
+.display-label {
+    display: inline-block;
+    width: 150px;
+    margin: 2px;
+}
+
+.display-field {
+    margin: 2px;
+    width: 350px;
+}
+
+.editor-label {
+    display: inline-block;
+    width: 250px;
+    margin: 2px;
+    vertical-align: top;
+}
+
+.editor-field {
+    display: inline-block;
+    width: 800px;
+    margin: 2px;
+}
+
+.text-box {
+    width: 400px;
+}
+
+.multi-line {
+    height: 200px;
+}
+
+.field-validation-error {
+    color: #b72323;
+}
+

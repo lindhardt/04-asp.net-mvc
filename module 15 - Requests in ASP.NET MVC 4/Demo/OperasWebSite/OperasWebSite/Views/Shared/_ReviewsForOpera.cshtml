@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OperasWebSite.Models.Review>
+
+<script>
+    $(function () {
+        $('#reviews-tool').accordion();
+    });
+</script>
+
+<h3>Reviews</h3>
+
+@using (Ajax.BeginForm("_ReviewsForOpera",
+    new { OperaId = ViewBag.OperaId },
+    new AjaxOptions { UpdateTargetId = "reviews-tool" }))
+    {
+
+<div id="reviews-tool">
+    @foreach (var item in Model)
+    {
+        <h3>
+            Performance Date:
+            @Html.DisplayFor(modelItem => item.Date)
+        </h3>
+        <div>
+            <div class="photo-comment-subject">
+                Company:
+                @Html.DisplayFor(modelItem => item.Company)
+            </div>
+
+            <div class="photo-comment-body">
+                @Html.DisplayFor(modelItem => item.ReviewText)
+            </div>
+        </div>
+    }
+</div>
+@Html.Action("_Create", "Review", new { OperaId = ViewBag.OperaId })
+}

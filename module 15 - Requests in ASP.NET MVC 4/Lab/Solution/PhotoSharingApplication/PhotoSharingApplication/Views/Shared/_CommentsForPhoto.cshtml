@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PhotoSharingApplication.Models.Comment>
+
+<h3>Comments</h3>
+
+@using (Ajax.BeginForm("_CommentsForPhoto",
+                        new { PhotoId = ViewBag.PhotoId },
+                        new AjaxOptions { UpdateTargetId = "comments-tool" }))
+{
+
+<div id="comments-tool">
+    <div id="all-comments">
+    @foreach (var item in Model)
+    {
+        <div class="photo-comment">
+
+            <div class="photo-comment-from">
+                From:
+                @Html.DisplayFor(modelItem => item.UserName)
+            </div>
+
+            <div class="photo-comment-subject">
+                @Html.DisplayNameFor(model => model.Subject):
+                @Html.DisplayFor(modelItem => item.Subject)
+            </div>
+
+            <div class="photo-comment-body">
+                @Html.DisplayFor(modelItem => item.Body)
+            </div>
+
+            @Html.ActionLink("Delete This Comment", "Delete", new { id = item.CommentID })
+
+        </div>
+    }
+    </div>
+
+    <div id="addcomment" class="add-comment-box">
+        @if (Request.IsAuthenticated)
+        {
+            @Html.Action("_Create", "Comment", new { PhotoID = ViewBag.PhotoId })
+        }
+        else
+        {
+            @Html.ActionLink("To comment you must log in", "Login", "Account")
+        }
+    </div>
+</div>
+}
