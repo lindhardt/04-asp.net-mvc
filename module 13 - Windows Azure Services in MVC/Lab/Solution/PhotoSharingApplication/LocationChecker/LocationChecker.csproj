@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0914F10F-24F9-461F-9C4F-94CFD9210186}</ProjectGuid>
+    <ProjectGuid>{3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WCFServiceWebRole1</RootNamespace>
-    <AssemblyName>WCFServiceWebRole1</AssemblyName>
+    <RootNamespace>LocationChecker</RootNamespace>
+    <AssemblyName>LocationChecker</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -40,6 +40,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BingMapsRESTToolkit, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BingMapsRESTToolkit.1.0.5\lib\net45\BingMapsRESTToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -60,24 +63,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\GeocodeService\configuration91.svcinfo" />
-    <None Include="Connected Services\GeocodeService\configuration.svcinfo" />
-    <None Include="Connected Services\GeocodeService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="LocationCheckerService.svc" />
     <Content Include="Web.config" />
-    <Content Include="Connected Services\GeocodeService\WCFServiceWebRole1.GeocodeService.GeocodeResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\GeocodeService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="LocationCheckerService.svc.cs">
       <DependentUpon>LocationCheckerService.svc</DependentUpon>
     </Compile>
@@ -88,35 +77,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\GeocodeService\GeocodeService.wsdl" />
-    <None Include="Connected Services\GeocodeService\GeocodeService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GeocodeService\GeocodeService1.wsdl" />
-    <None Include="Connected Services\GeocodeService\GeocodeService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GeocodeService\GeocodeService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GeocodeService\GeocodeService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GeocodeService\GeocodeService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\GeocodeService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -131,9 +98,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>65268</DevelopmentServerPort>
+          <DevelopmentServerPort>58841</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65268/</IISUrl>
+          <IISUrl>http://localhost:58841/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

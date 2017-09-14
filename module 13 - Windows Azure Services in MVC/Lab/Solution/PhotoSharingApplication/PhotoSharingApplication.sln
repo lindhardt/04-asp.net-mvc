@@ -1,15 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSharingApplication", "PhotoSharingApplication\PhotoSharingApplication.csproj", "{E321F1BA-C1D0-45A9-8742-286286CB777F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25} = {3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSharingTest", "PhotoSharingTest\PhotoSharingTest.csproj", "{CD2A5C68-6BD6-4C90-895C-F31CF848BAE3}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "LocationChecker", "LocationChecker\LocationChecker.ccproj", "{7B8E4336-636A-4427-9FB0-0B22699B34A8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationCheckerWebRole", "WCFServiceWebRole1\LocationCheckerWebRole.csproj", "{0914F10F-24F9-461F-9C4F-94CFD9210186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationChecker", "LocationChecker\LocationChecker.csproj", "{3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +26,10 @@ Global
 		{CD2A5C68-6BD6-4C90-895C-F31CF848BAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD2A5C68-6BD6-4C90-895C-F31CF848BAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD2A5C68-6BD6-4C90-895C-F31CF848BAE3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B8E4336-636A-4427-9FB0-0B22699B34A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B8E4336-636A-4427-9FB0-0B22699B34A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B8E4336-636A-4427-9FB0-0B22699B34A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B8E4336-636A-4427-9FB0-0B22699B34A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0914F10F-24F9-461F-9C4F-94CFD9210186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0914F10F-24F9-461F-9C4F-94CFD9210186}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0914F10F-24F9-461F-9C4F-94CFD9210186}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0914F10F-24F9-461F-9C4F-94CFD9210186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6966AE-EA73-4EFE-AA8D-EAB234A1FB25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

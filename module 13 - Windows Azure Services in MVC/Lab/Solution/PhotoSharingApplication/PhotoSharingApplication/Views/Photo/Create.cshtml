@@ -38,7 +38,17 @@
             @Html.ValidationMessageFor(model => model.Description)
         </span>
     </div>
-                        
+
+    <div>
+        <span class="editor-label">
+            @Html.LabelFor(model => model.Location):
+        </span>
+        <span class="editor-field">
+            @Html.EditorFor(model => model.Location)
+            @Html.ValidationMessageFor(model => model.Location)
+        </span>
+    </div>
+
     <div>
         <span class="editor-label">
             @Html.LabelFor(model => model.UserName):
