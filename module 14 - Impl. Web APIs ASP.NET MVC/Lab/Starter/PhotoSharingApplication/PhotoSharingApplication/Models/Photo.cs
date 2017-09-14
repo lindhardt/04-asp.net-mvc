@@ -39,6 +39,15 @@ namespace PhotoSharingApplication.Models
         //UserName. This is the name of the user who created the photo
         public string UserName { get; set; }
 
+        //Location. This is a physical address where the photo was taken
+        public string Location { get; set; }
+
+        //Longitude. This is the longitude where the photo was taken
+        public string Longitude { get; set; }
+
+        //Latitude. This is the latitude where the photo was taken
+        public string Latitude { get; set; }
+
         //All the comments on this photo, as a navigation property
         public virtual ICollection<Comment> Comments { get; set; }
 

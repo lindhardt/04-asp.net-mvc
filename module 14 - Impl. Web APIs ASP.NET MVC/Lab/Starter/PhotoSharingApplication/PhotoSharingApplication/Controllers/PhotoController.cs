@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.UI;
 using System.Globalization;
 using PhotoSharingApplication.Models;
+using PhotoSharingApplication.GeocodeService;
 
 namespace PhotoSharingApplication.Controllers
 {
@@ -84,6 +85,17 @@ namespace PhotoSharingApplication.Controllers
         [HttpPost]
         public ActionResult Create(Photo photo, HttpPostedFileBase image)
         {
+            if(photo.Location != String.Empty)
+            {
+                string stringLongLat = CheckLocation(photo.Location);
+                if(stringLongLat.StartsWith("Success"))
+                {
+                    char[] splitChars = { ':' };
+                    string[] coordinates = stringLongLat.Split(splitChars);
+                    photo.Latitude = coordinates[1];
+                    photo.Longitude = coordinates[2];
+                }
+            }
             photo.CreatedDate = DateTime.Today;
             if (!ModelState.IsValid)
             {
@@ -175,6 +187,24 @@ namespace PhotoSharingApplication.Controllers
             favorites.Add(PhotoID);
             Session["Favorites"] = favorites;
             return Content("The picture has been added to your favorites", "text/plain", System.Text.Encoding.Default);
+        }
+
+        private string CheckLocation(string location)
+        {
+            LocationCheckerServiceClient client = null;
+
+            string response = null;
+
+            try
+            {
+                client = new LocationCheckerServiceClient();
+                response = client.GetLocation(location);
+            } catch(Exception e)
+            {
+                response = e.Message;
+            }
+
+            return response;
         }
 
     }
