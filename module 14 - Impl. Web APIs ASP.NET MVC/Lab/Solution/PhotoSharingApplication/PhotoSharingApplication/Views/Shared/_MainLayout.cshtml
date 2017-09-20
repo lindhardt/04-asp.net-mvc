@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/PhotoSharingStyles.css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.0/jquery-ui.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <h1 class="site-page-title">Adventure Works Photo Sharing</h1>
+    <div class="login-controls">
+        @if (Request.IsAuthenticated) {
+            <div>
+                Hello, @System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(User.Identity.Name).
+                @Html.ActionLink("Log Off", "LogOff", "Account")
+                @Html.ActionLink("Reset", "ResetPassword", "Account")
+            </div>
+        } else {
+            <div>
+                @Html.ActionLink("Log In", "Login", "Account")
+                @Html.ActionLink("Register", "Register", "Account")
+            </div>
+        }
+    </div>
+    <div class="clear-floats" />
+
+    <div id="topmenu">
+        @Html.MvcSiteMap().Menu(false, true, true)
+    </div>
+    
+    <div id="breadcrumb">
+        Current Location: @Html.MvcSiteMap().SiteMapPath()
+    </div>
+
+    @if (Session["Favorites"] != null) {
+        <div id="favourites-link">
+            @Html.ActionLink("Favorite Photos", "FavoritesSlideshow", "Photo")
+        </div>
+    }
+    
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>
