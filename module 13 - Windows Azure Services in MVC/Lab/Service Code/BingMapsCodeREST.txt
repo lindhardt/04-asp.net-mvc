@@ -1,0 +1,35 @@
+        public string GetLocation(string address)
+        {
+            string results = String.Empty;
+
+            string key = "AjRSkj6c-Oa0lhoApMZyta1qOzss1RFEgXKFaCfwvXAaKoqzbKMWmiTE9z6-S-Xa";
+
+            string uri = "http://dev.virtualearth.net/REST/v1/Locations?query="
+                + address + "&key=" + key;
+
+            var request = new GeocodeRequest
+            {
+                BingMapsKey = key,
+                Query = address
+            };
+
+            Response response = Task.Run(() => ServiceManager.GetResponseAsync(request)).Result;
+
+            Location location = response.ResourceSets[0].Resources.FirstOrDefault() as Location;
+
+            if (location != null)
+            {
+                var coor = location.GeocodePoints.FirstOrDefault().GetCoordinate();
+
+                results = String.Format("Success: {0}:{1}",
+                    coor.Latitude,
+                    coor.Longitude);
+            }
+            else
+            {
+                results = "No Results Found";
+            }
+
+
+            return results;
+        }
