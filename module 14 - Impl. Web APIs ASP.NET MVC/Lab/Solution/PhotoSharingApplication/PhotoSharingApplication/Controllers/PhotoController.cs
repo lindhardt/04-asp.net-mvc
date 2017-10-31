@@ -209,7 +209,7 @@ namespace PhotoSharingApplication.Controllers
 
         public ViewResult Map()
         {
-            return View();
+            return View("GoogleMap");
         }
     }
 }
