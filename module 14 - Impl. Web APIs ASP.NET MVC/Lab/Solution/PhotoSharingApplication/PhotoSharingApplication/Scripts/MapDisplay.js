@@ -17,8 +17,15 @@ function GetMap() {
 
     //Add the infobox but hide it for now
     infoBox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(0, 0), { visible: false, offset: new Microsoft.Maps.Point(0, 20) });
+    //infoBox.setMap(map);
     infoboxLayer.push(infoBox);
 
+    GetPhotos(webApiUrl);
+
+}
+
+function OnError(response) {
+    alert("Could not obtain the picture coordinates");
 }
 
 function GetPhotos(serviceUrl) {
@@ -38,7 +45,7 @@ function DisplayPics(response) {
     var pin;
     $.each(response, function (index, photo) {
         //Create the new location
-        location = new Microsoft.Maps.Location(photo.Latitude, photo.Longitude);
+        location = new Microsoft.Maps.Location(photo.Longitude, photo.Latitude);
         //Create a new pin
         pin = new Microsoft.Maps.Pushpin(location);
         //Set some pin proerties for use in the infobox html
@@ -65,10 +72,6 @@ function DisplayInfoBox(e) {
         //Set the location of the infobox and display it with the HTML
         infoBox.setLocation(e.target.getLocation());
         infoBox.setOptions({ visible: true, showPointer: true, htmlContent: htmlPinContent });
-    }
-
-    function OnError(response) {
-        alert("Could not obtain the picture coordinates");
     }
 
 }

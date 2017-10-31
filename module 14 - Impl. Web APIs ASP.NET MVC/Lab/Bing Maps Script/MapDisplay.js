@@ -5,7 +5,7 @@ var dataLayer;
 function GetMap() {
 
     //Set up the map
-    map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), { credentials: "AjDobrYQf74nnDXTKLvNsmp3DkILiCTFq_vZuQSX3ehhjgPkYj0ocd1_31mC_rzL" });
+    map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), { credentials: "AjRSkj6c-Oa0lhoApMZyta1qOzss1RFEgXKFaCfwvXAaKoqzbKMWmiTE9z6-S-Xa" });
 
     //Set up the data layer where the push pins will go
     dataLayer = new Microsoft.Maps.EntityCollection();
